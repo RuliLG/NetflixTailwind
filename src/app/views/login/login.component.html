@@ -1,39 +1,60 @@
-<section>
+<section class="min-h-screen py-24 flex items-center justify-center">
     <!-- Background -->
-    <img src="https://assets.nflxext.com/ffe/siteui/vlv3/03fdc4bf-72f6-4926-83a7-a76e6a1a5591/bc045282-df3c-4501-a3b9-2ddb5c970474/ES-en-20211115-popsignuptwoweeks-perspective_alpha_website_small.jpg" alt="">
+    <img
+        class="fixed left-0 top-0 w-full h-full object-cover"
+        src="https://assets.nflxext.com/ffe/siteui/vlv3/03fdc4bf-72f6-4926-83a7-a76e6a1a5591/bc045282-df3c-4501-a3b9-2ddb5c970474/ES-en-20211115-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+        alt=""
+    >
+
+    <div class="bg-gradient-to-t from-black to-transparent fixed top-0 left-0 w-full h-full"></div>
+    <div class="bg-gradient-to-b from-black to-transparent fixed top-0 left-0 w-full h-1/2 opacity-50"></div>
 
     <!-- Netflix Logo -->
-    <a routerLink="/login">
-        <app-netflix-logo></app-netflix-logo>
+    <a routerLink="/login" class="absolute left-0 top-0 px-8 py-4 block">
+        <app-netflix-logo class="text-red-500 inline-block h-12"></app-netflix-logo>
     </a>
 
     <!-- Login Card -->
-    <div>
-        <h1>Sign in</h1>
-        <form action="#" method="POST" (ngSubmit)="login()">
-            <label for="email-input">Email or phone number</label>
-            <input type="email" id="email-input" name="email" required placeholder="Email or phone number">
+    <div class="relative bg-black bg-opacity-75 p-12 rounded-xl w-full max-w-sm">
+        <h1 class="text-3xl text-white font-bold">Sign in</h1>
+        <form action="#" method="POST" (ngSubmit)="login()" class="mt-8">
+            <label class="sr-only" for="email-input">Email or phone number</label>
+            <input
+                class="bg-gray-700 rounded-md p-4 block w-full border-0"
+                type="email"
+                id="email-input"
+                name="email"
+                required
+                placeholder="Email or phone number"
+            >
 
-            <label for="password-input">Password</label>
-            <input type="password" id="password-input" name="password" required placeholder="Password">
+            <label class="sr-only" for="password-input">Password</label>
+            <input
+                class="bg-gray-700 rounded-md p-4 block w-full border-0 mt-4"
+                type="password"
+                id="password-input"
+                name="password"
+                required
+                placeholder="Password"
+            >
 
-            <button type="submit">Sign In</button>
+            <button type="submit" class="block w-full cursor-pointer text-center rounded bg-red-500 text-white font-semibold p-4 mt-8">Sign In</button>
 
-            <div>
+            <div class="flex justify-between mt-4 text-gray-400 text-sm font-medium">
                 <label>
-                    <input type="checkbox"> Remember me
+                    <input type="checkbox" class="h-4 w-4 text-gray-500 rounded-sm mr-2"> Remember me
                 </label>
                 <a href="#">Need help?</a>
             </div>
         </form>
 
-        <p>
+        <p class="mt-8 text-gray-400 text-sm">
             New to Netflix?
-            <a href="#">Sign up now.</a>
+            <a href="#" class="text-white">Sign up now.</a>
         </p>
-        <p>
+        <p class="mt-2 text-gray-400 text-xs">
             This page is protected by Google reCAPTCHA to ensure you're not a bot.
-            <a href="#">Learn more</a>
+            <a href="#" class="text-blue-600">Learn more</a>
         </p>
     </div>
 </section>
