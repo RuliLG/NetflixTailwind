@@ -1,0 +1,20 @@
+<section>
+    <!-- Netflix Logo -->
+    <a routerLink="/login">
+        <app-netflix-logo></app-netflix-logo>
+    </a>
+
+    <!-- Profile selection -->
+    <div>
+        <h1>¿Quién eres? Elige tu perfil</h1>
+        <ul>
+            <li *ngFor="let profile of profiles">
+                <app-netflix-profile [profile]="profile"></app-netflix-profile>
+            </li>
+        </ul>
+
+        <div>
+            <button type="button">Administrar perfiles</button>
+        </div>
+    </div>
+</section>

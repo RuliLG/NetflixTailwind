@@ -1,0 +1,29 @@
+<div *ngIf="featured">
+    <section>
+        <img [src]="moviePoster(featured)" alt="{{ featured.title }}">
+        <div>
+            <h1>{{ featured.title }}</h1>
+            <p>{{ featured.overview }}</p>
+            <div>
+                <button type="button">
+                    Reproducir
+                </button>
+                <button type="button">
+                    Más información
+                </button>
+            </div>
+
+        </div>
+        <!-- Overlay -->
+        <div></div>
+    </section>
+
+    <div>
+        <section *ngFor="let genre of genres">
+            <h2>{{ genre.name }}</h2>
+            <div *ngFor="let movie of genre.movies">
+                <app-netflix-movie [movie]="movie"></app-netflix-movie>
+            </div>
+        </section>
+    </div>
+</div>
