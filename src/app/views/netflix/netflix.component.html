@@ -1,29 +1,39 @@
-<div *ngIf="featured">
-    <section>
-        <img [src]="moviePoster(featured)" alt="{{ featured.title }}">
-        <div>
-            <h1>{{ featured.title }}</h1>
-            <p>{{ featured.overview }}</p>
-            <div>
-                <button type="button">
-                    Reproducir
-                </button>
-                <button type="button">
-                    Más información
-                </button>
+<div *ngIf="featured" class="bg-black">
+    <section class="h-screen relative flex items-center justify-center">
+        <img [src]="moviePoster(featured)" alt="{{ featured.title }}" class="absolute left-0 top-0 w-full h-full object-cover object-center">
+        <!-- Overlay -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent"></div>
+        <div class="w-full max-w-7xl relative">
+            <div class="max-w-3xl px-4">
+                <h1 class="text-2xl text-white font-bold md:text-4xl lg:text-6xl">{{ featured.title }}</h1>
+                <p class="text-gray-400 mt-4">{{ featured.overview }}</p>
+                <div class="mt-6 flex flex-col justify-start items-center space-y-4 md:space-y-0 md:space-x-4 md:flex-row">
+                    <button type="button" class="w-full flex items-center justify-center px-6 py-2 bg-white text-black font-medium rounded space-x-2 md:w-auto hover:bg-opacity-75">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"><path d="M3 2.69127C3 1.93067 3.81547 1.44851 4.48192 1.81506L21.4069 11.1238C22.0977 11.5037 22.0977 12.4963 21.4069 12.8762L4.48192 22.1849C3.81546 22.5515 3 22.0693 3 21.3087V2.69127Z" fill="currentColor"></path></svg>
+                        <span>Reproducir</span>
+                    </button>
+                    <button type="button" class="w-full flex items-center justify-center px-6 py-2 bg-gray-700 bg-opacity-75 text-white font-medium rounded space-x-2 md:w-auto hover:bg-opacity-50">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM13 10V18H11V10H13ZM12 8.5C12.8284 8.5 13.5 7.82843 13.5 7C13.5 6.17157 12.8284 5.5 12 5.5C11.1716 5.5 10.5 6.17157 10.5 7C10.5 7.82843 11.1716 8.5 12 8.5Z" fill="currentColor"></path></svg>
+                        <span>
+                            Más información
+                        </span>
+                    </button>
+                </div>
             </div>
 
         </div>
-        <!-- Overlay -->
-        <div></div>
     </section>
 
-    <div>
+    <div class="-mt-24 relative space-y-12">
         <section *ngFor="let genre of genres">
-            <h2>{{ genre.name }}</h2>
-            <div *ngFor="let movie of genre.movies">
-                <app-netflix-movie [movie]="movie"></app-netflix-movie>
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-xl text-white font-medium">{{ genre.name }}</h2>
             </div>
+            <ul class="flex mt-4 space-x-2 overflow-x-scroll">
+                <li *ngFor="let movie of genre.movies" class="flex-shrink-0">
+                    <app-netflix-movie [movie]="movie" class="block"></app-netflix-movie>
+                </li>
+            </ul>
         </section>
     </div>
 </div>

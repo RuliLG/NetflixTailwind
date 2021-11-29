@@ -1,1 +1,7 @@
-<img [src]="posterUrl" [alt]="movie.title">
+<div class="rounded-md overflow-hidden relative group cursor-pointer">
+    <img [src]="posterUrl" [alt]="movie.title" class="block w-64 h-40 object-cover object-center">
+    <div class="opacity-0 transition group-hover:opacity-100">
+        <div class="absolute left-0 top-0 w-full h-full bg-gradient-to-t from-black to-transparent opacity-75"></div>
+        <h3 class="absolute bottom-0 left-0 w-full p-4 text-white font-medium">{{ movie.title }}</h3>
+    </div>
+</div>
