@@ -1,4 +1,4 @@
-<a routerLink="/browse">
-    <img [src]="profile.profilePictureUrl" [alt]="profile.name">
-    <span>{{ profile.name }}</span>
+<a routerLink="/login" class="block group">
+    <img [src]="profile.profilePictureUrl" [alt]="profile.name" class="rounded-md block mx-auto border-2 border-transparent group-hover:border-white">
+    <span class="block mt-2 text-gray-500 text-center md:text-base lg:text-xl group-hover:text-white">{{ profile.name }}</span>
 </a>

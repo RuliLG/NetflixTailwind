@@ -1,20 +1,20 @@
-<section>
+<section class="bg-gray-900 min-h-screen py-16 flex items-center justify-center">
     <!-- Netflix Logo -->
-    <a routerLink="/login">
-        <app-netflix-logo></app-netflix-logo>
+    <a routerLink="/login" class="absolute top-0 left-0 px-12 py-4">
+        <app-netflix-logo class="h-6 inline-block text-red-500"></app-netflix-logo>
     </a>
 
     <!-- Profile selection -->
-    <div>
-        <h1>¿Quién eres? Elige tu perfil</h1>
-        <ul>
+    <div class="w-3/5">
+        <h1 class="text-white text-center md:text-4xl lg:text-6xl">¿Quién eres? Elige tu perfil</h1>
+        <ul class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 lg:gap-8">
             <li *ngFor="let profile of profiles">
                 <app-netflix-profile [profile]="profile"></app-netflix-profile>
             </li>
         </ul>
 
-        <div>
-            <button type="button">Administrar perfiles</button>
+        <div class="flex justify-center mt-20">
+            <button type="button" class="bg-transparent border border-gray-500 text-lg text-gray-500 px-6 py-2 tracking-widest hover:text-white hover:border-white">Administrar perfiles</button>
         </div>
     </div>
 </section>
